@@ -11,6 +11,7 @@ function memoize(fn) {
   return function (...args) {
     // Convert the arguments into a JSON string to use as a cache key.
     // This ensures that even if arguments are objects or arrays, they are properly compared.
+    // Key creation to store the results "[2,2]": 4, and so on
     let n = JSON.stringify(args);
 
     // Check if the result for these arguments is already in the cache.
